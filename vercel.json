@@ -7,10 +7,6 @@
     {
       "source": "/projects/(.*)",
       "destination": "/projects/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/$1"
     }
   ],
   "headers": [

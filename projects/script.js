@@ -36,7 +36,7 @@ function getProjects() {
       return response.json();
     })
     .then((data) => {
-      console.log('Projects loaded:', data); // Debug log
+      console.log('Projects loaded successfully:', data); // Debug log
       return data;
     })
     .catch((error) => {
@@ -53,13 +53,26 @@ const categoryClassMap = {
 };
 
 function showProjects(projects) {
-  let projectsContainer = document.querySelector('.work .box-container');
+  console.log('showProjects called with:', projects); // Debug log
+
+  let projectsContainer = document.querySelector('.box-container');
+  console.log('Container found:', projectsContainer); // Debug log
+
+  if (!projectsContainer) {
+    console.error('Project container not found!');
+    return;
+  }
+
   let projectsHTML = '';
 
   if (!projects || projects.length === 0) {
-    projectsHTML = '<p>No projects found.</p>';
+    projectsHTML =
+      '<p style="text-align: center; color: white; font-size: 18px;">No projects found.</p>';
+    console.log('No projects to display');
   } else {
-    projects.forEach((project) => {
+    console.log('Rendering', projects.length, 'projects');
+    projects.forEach((project, index) => {
+      console.log('Processing project', index + 1, ':', project.name);
       // Map category to class for filtering
       let categoryClass = categoryClassMap[project.category] || '';
       projectsHTML += `
@@ -87,42 +100,41 @@ function showProjects(projects) {
   }
 
   projectsContainer.innerHTML = projectsHTML;
+  console.log('HTML inserted into container');
 
   // Only initialize isotope if there are projects
   if (projects && projects.length > 0) {
-    // isotope filter products
-    var $grid = $('.box-container').isotope({
-      itemSelector: '.grid-item',
-      layoutMode: 'fitRows',
-      masonry: {
-        columnWidth: 200,
-      },
-    });
+    console.log('Initializing isotope');
+    // Wait a bit for DOM to update
+    setTimeout(() => {
+      // isotope filter products
+      var $grid = $('.box-container').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+        masonry: {
+          columnWidth: 200,
+        },
+      });
 
-    // filter items on button click
-    $('.button-group').on('click', 'button', function () {
-      $('.button-group').find('.is-checked').removeClass('is-checked');
-      $(this).addClass('is-checked');
-      var filterValue = $(this).attr('data-filter');
-      $grid.isotope({ filter: filterValue });
-    });
+      // filter items on button click
+      $('.button-group').on('click', 'button', function () {
+        $('.button-group').find('.is-checked').removeClass('is-checked');
+        $(this).addClass('is-checked');
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+      });
+    }, 100);
   }
 }
 
-// Temporary test - remove after debugging
-projects = [
-  {
-    name: 'Test Project',
-    desc: 'Test description',
-    image: 'adhicrat.png',
-    category: 'Gen Ai',
-    links: { code: '#' },
-  },
-];
-
-getProjects().then((data) => {
-  showProjects(data);
+// Load projects when DOM is ready
+$(document).ready(function () {
+  console.log('DOM ready, loading projects...');
+  getProjects().then((data) => {
+    showProjects(data);
+  });
 });
+
 // fetch projects end
 
 // disable developer mode
