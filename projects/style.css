@@ -122,10 +122,6 @@ header .navbar ul li a:hover{
 .work{
   background: linear-gradient(to bottom, #010136, #00003a);
   margin-top: 5rem;
-  width: 100vw;
-  overflow-x: hidden;
-  padding-right: 1rem;
-  box-sizing: border-box;
 }
 
 .work h2{
@@ -544,7 +540,7 @@ header .navbar ul li a:hover{
   }
   
   .work .box-container {
-    margin: 0 1rem;
+    margin: 0;
     gap: 0.8rem;
   }
   
