@@ -109,6 +109,17 @@ function showProjects(projects) {
   }
 }
 
+// Temporary test - remove after debugging
+projects = [
+  {
+    name: 'Test Project',
+    desc: 'Test description',
+    image: 'adhicrat.png',
+    category: 'Gen Ai',
+    links: { code: '#' },
+  },
+];
+
 getProjects().then((data) => {
   showProjects(data);
 });
