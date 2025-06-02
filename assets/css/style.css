@@ -198,6 +198,7 @@ header .navbar ul li a:hover {
   gap: 1.5rem;
   min-height: 100vh;
   align-items: center;
+  justify-content: center;
 }
 .home #particles-js {
   position: absolute;
@@ -218,16 +219,17 @@ header .navbar ul li a:hover {
   flex: 1 1 40rem;
   padding-top: 1rem;
   z-index: 1;
+  max-width: 600px;
 }
 .home .image {
   flex: 1 1 40rem;
   z-index: 1;
+  max-width: 400px;
 }
 .home .image img {
-  width: 70%;
-  margin-left: 32rem;
+  width: 100%;
+  margin-left: 0;
   border-radius: 50%;
-  
   cursor: pointer;
 }
 .home .image img:hover {
@@ -257,7 +259,7 @@ header .navbar ul li a:hover {
 }
 .home .btn {
   margin-top: 1rem;
-  position: absolute;
+  position: relative;
   line-height: 0;
   padding: 1.6rem 3rem;
   border-radius: 4em;
@@ -336,6 +338,52 @@ header .navbar ul li a:hover {
 /* social icons end */
 
 /* hero media queries starts*/
+@media (max-width: 1024px) {
+  .home .image img {
+    width: 50%;
+    margin-left: 10rem;
+  }
+  .home .content h2 {
+    font-size: 3.5rem;
+  }
+  .home .content p {
+    font-size: 1.8rem;
+  }
+  .home .content p span {
+    font-size: 1.8rem;
+  }
+  .home .btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .home .image img {
+    width: 60%;
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .home .content h2 {
+    font-size: 3rem;
+  }
+  .home .content p {
+    font-size: 1.6rem;
+  }
+  .home .content p span {
+    font-size: 1.6rem;
+  }
+  .home .btn {
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    position: relative;
+    margin-top: 2rem;
+  }
+}
 @media (max-width: 450px) {
   .home .btn {
     margin: 4rem 0;
@@ -447,6 +495,21 @@ header .navbar ul li a:hover {
   transform: translateX(5px);
 }
 /* about media queries starts*/
+@media screen and (max-width: 1024px) {
+  .about .row {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .about .row .image,
+  .about .row .content {
+    flex: 1 1 100%;
+    margin: 0 auto;
+  }
+  .about .row .image img {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
 @media screen and (max-width: 600px) {
   .about .row .image {
     margin-top: 2rem;
@@ -525,6 +588,11 @@ header .navbar ul li a:hover {
   margin-left: 0.5rem;
 }
 /* skills media queries starts*/
+@media screen and (max-width: 1024px) {
+  .skills .container .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media screen and (max-width: 600px) {
   .skills .container {
     padding: 0;
@@ -621,6 +689,15 @@ header .navbar ul li a:hover {
 }
 
 /* education media queries starts*/
+@media screen and (max-width: 1024px) {
+  .education .box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .education .box-container .box {
+    width: 90%;
+  }
+}
 @media screen and (max-width: 600px) {
   .education .box-container .box {
     flex-direction: column;
@@ -939,6 +1016,27 @@ form .button-area {
   left: 8px;
 }
 /* contact section media queries starts */
+@media (max-width: 1024px) {
+  .contact .container {
+    margin: 2rem 1rem;
+  }
+  .contact .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact .content .image-box {
+    max-width: 100%;
+    margin: 0 0 2rem 0;
+  }
+  .contact .content .image-box img {
+    height: auto;
+    max-width: 100%;
+  }
+  .contact .content form {
+    width: 100%;
+    margin-right: 0;
+  }
+}
 @media (max-width: 900px) {
   .contact {
     min-height: 70vh;
@@ -1066,10 +1164,27 @@ form .button-area {
     transform: scale(1.1);
   }
 }
+@media (max-width: 1024px) {
+  .footer .box-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  .footer .box-container .box {
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+  .footer .box-container .box .share {
+    justify-content: center;
+  }
+}
 @media (max-width: 768px) {
   .footer .box-container {
     flex-direction: column;
     align-items: center;
+    padding: 0 1rem;
   }
   .footer .box-container .box {
     margin: 1rem 0;
