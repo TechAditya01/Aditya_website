@@ -49,7 +49,7 @@ Aditya_website/
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://aditya-portfolio-website.vercel.app)
+[View Live Portfolio]([https://adityaaportfolio.vercel.app/])
 
 ## 📱 Screenshots
 
