@@ -93,7 +93,7 @@ Aditya_website/
 - 📧 adityakumar.gdscrcet@gmail.com
 - 💼 [LinkedIn](https://www.linkedin.com/in/aditya-kumar-46bb7524b/)
 - 🐙 [GitHub](https://github.com/TechAditya01)
-- 🐦 [Twitter](https://x.com/KumarAdity47357)
+- 🐦 [Twitter](https://x.com/iam_additya)
 - 📝 [Dev.to](https://dev.to/aditya_kumar_1ed587da5d8f)
 
 ## 📄 License
